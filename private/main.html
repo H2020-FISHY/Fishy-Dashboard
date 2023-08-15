@@ -1,0 +1,219 @@
+<!doctype html>
+
+<html lang="en" class="h-100">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" type="image/x-icon" href="img/fishy.jpg">
+	<title>Fishy dashboard</title>
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column h-100">
+	<div id="page">
+		<div class="wrapper">
+			<nav id="sidebar" class="active">
+				<div class="sidebar-header text-center">
+					<img src="img/fishy.jpg" id="thelogo" alt="logo" class="app-logo"
+						style="width: 50%;height: auto;border-radius: 50%;">
+				</div>
+				<!-- Open source feather icons at https://feathericons.com/ -->
+				<ul class="list-unstyled components text-secondary" id="adduriside">
+					<!--
+						<li class="lkt1" ><a href="#"><i class="data-feather theme-item" data-feather="home"></i> <span
+								class="theme-item"> Tool 1</span></a></li>
+					<li class="lkt2"><a href="#"><i class="data-feather theme-item" data-feather="file-text"></i> <span
+								class="theme-item"> Tool 2</span></a></li>
+					<li class="lkt3"><a href="#"><i class="data-feather theme-item" data-feather="pie-chart"></i> <span
+								class="theme-item"> Tool 3</span></a></li>
+					<li class="lkt4"><a href="#"><i class="data-feather theme-item" data-feather="grid"></i> <span
+								class="theme-item"> Tool 4</span></a></li>
+					<li class="lkt5"><a href="#"><i class="data-feather theme-item" data-feather="globe"></i> <span
+								class="theme-item"> Tool 5</span></a></li>
+					<li id="lktres"><a href="#"><i class="data-feather theme-item" data-feather="globe"></i> <span
+								class="theme-item"> Empty dashboard</span></a></li>
+
+					-->
+					
+				</ul>
+			</nav>
+			<div id="bodywrapper" class="container-fluid showhidetoggle">
+				<nav class="navbar navbar-expand-md navbar-white bg-white py-0" aria-label="navbarexample" id="navbar">
+					<div class="container-fluid">
+						<button type="button" id="sidebarCollapse" class="btn btn-light py-0">
+							<i data-feather="menu"></i> <span></span>
+						</button>
+						<img src="img/fishy.jpg" alt="logo" class="app-logo theme-item mx-2 navbrandarea1">
+						<h4 class="sidebar-title theme-item mt-2 navbrandarea2">Fishy</h4>
+						<button class="navbar-toggler py-0" type="button" data-bs-toggle="collapse"
+							data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"><i data-feather="menu"></i></span>
+						</button>
+						<div class="collapse navbar-collapse mx-1" id="navbarsExample04">
+							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+								<li class="nav-item dropdown nav-dropdown"><a
+										class="nav-item nav-link dropdown-toggle text-secondary py-0" href="#"
+										id="navbarDropdownMenuLink1" role="button" data-bs-toggle="dropdown"
+										aria-expanded="false"><i class="data-feather theme-item"
+											data-feather="tool"></i><span class="theme-item"> Tools </span><i
+											class="data-feather theme-item" data-feather="chevron-down"></i></a>
+									<ul class="dropdown-menu" id="adduris" aria-labelledby="navbarDropdownMenuLink1">
+									</ul>
+								</li>
+								<li class="nav-item">
+									<div class="nav-dropdown lktres" >
+										<a class="nav-item nav-link active text-secondary py-0" aria-current="page"
+											href="#"><i class="data-feather theme-item"
+												data-feather="trash"></i><span class="theme-item"> Clear </span></a>
+									</div>
+								</li>
+							</ul>
+							<div class="usermenu">
+								<div class="nav-dropdown py-0">
+									<a href="#" class="nav-item nav-link dropdown-toggle text-secondary py-0"
+										id="navbarDropdown3" role="button" data-bs-toggle="dropdown"
+										aria-expanded="false">
+										<i class="theme-item" data-feather="user"></i>
+										<span class="theme-item" id="username">
+											User Name
+										</span>
+										<i class="theme-item" data-feather="chevron-down"></i>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-right" id="editable-dd" aria-labelledby="navbarDropdown3">
+										<li><a href="#" class="dropdown-item mt-2" data-bs-toggle="modal"
+												data-bs-target="#settingsModal"><i class="data-feather"
+													data-feather="settings"></i> Settings</a></li>
+										<li><a href="javascript:logout();" id="logout" class="dropdown-item mt-2"><i class="data-feather"
+													data-feather="log-out"></i> Logout</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</nav>
+				<div class="settings">
+					<div class="modal fade" id="settingsModal" aria-labelledby="settingsModalTitle" aria-hidden="true"
+						tabindex="-1">
+						<div class="modal-dialog modal-dialog-settings">
+							<div class="modal-content">
+								<div class="modal-header text-center">
+									<h5 class="modal-title" id="exampleModalLabel">Settings</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<section id="logincontent" class="shiftdown">
+										<div class="row g-3 mb-3 mt-3">
+											<div class="col-md-6">
+												<h6 class="text-muted">Select Color</h6>
+												<span onclick="changeColor('0')"
+													class="btn btn-sm btn-primary rounded-circle"><span
+														class="me-2"></span></span> <span onclick="changeColor('1')"
+													class="btn btn-sm btn-success rounded-circle"><span
+														class="me-2"></span></span> <span onclick="changeColor('2')"
+													class="btn btn-sm btn-danger rounded-circle"><span
+														class="me-2"></span></span> <span onclick="changeColor('3')"
+													class="btn btn-sm btn-warning rounded-circle"><span
+														class="me-2"></span></span> <span onclick="changeColor('4')"
+													class="btn btn-sm btn-secondary rounded-circle"><span
+														class="me-2"></span></span>
+												<div class="d-flex justify-content-between" style="padding-top: 20px;">
+													<button onclick="removeColorCookie()">Reset to
+														Default</button>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<h6 class="text-muted">View Size</h6>
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="flexRadioDefault"
+														id="radioCompactView"> <label class="form-check-label"
+														for="radioCompactView">
+														Compact</label>
+												</div>
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="flexRadioDefault"
+														id="radioFullView"> <label class="form-check-label"
+														for="radioFullView">
+														Full-screen </label>
+												</div>
+												<div class="d-flex justify-content-between">
+													<button onclick="removeViewSizeCookie()">Reset to
+														Default</button>
+												</div>
+											</div>
+										</div>
+										<hr />
+										<button class="btn btn-sm btn-danger" data-bs-dismiss="modal" type="button">
+											<i data-feather="check-circle" class="mr-1"></i> Ok
+										</button>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="sidebarOverlayNav" class="screen-overlay float-end">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeOverlayNav()">&times;</a>
+					<div class="screen-overlay-content text-secondary">
+						<a href="#" class="active">About</a> <a href="#">Services</a> <a href="#">Clients</a> <a
+							href="#">Contact</a>
+					</div>
+				</div>
+				<div class="content">
+					<div class="container-fluid">
+						<br>
+						<div class="content">
+							<div class="canvas-wrapper" id="mainframe">
+							</div>
+
+							<!-- 							Canvas Wrapper End -->
+
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<footer class="footer mt-auto py-1 mx-4">
+		<div class="d-sm-flex justify-content-center justify-content-sm-between">
+			<span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
+				Fishy project
+				<script>
+					document.write(new Date().getFullYear())
+				</script>
+			</span> <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+				CRAAX Lab dashboard powered by AVNI
+			</span>
+		</div>
+	</footer>
+
+	<div id="loading" class="spinner-border text-primary align-middle" role="status"></div>
+
+	<button class="btn btn-sm btn-primary rounded-circle" onclick="scrollToTopFunction()" id="scrollToTop"
+		title="Scroll to top">
+		<i data-feather="arrow-up-circle"></i>
+	</button>
+
+	<script src="js/feather.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="js/checker.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function (event) {
+			feather.replace();
+		});
+	</script>
+</body>
+
+</html>
